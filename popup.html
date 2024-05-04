@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youtube Automation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px); /* Subtracting padding */
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px #007bff;
+    }
+
+    button {
+        width: calc(100% - 20px); /* Subtracting padding */
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    p, small {
+        text-align: center;
+        color: #666;
+    }
+    .span{
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Youtube Automation</h2>
+        <!-- <input id="input" type="text" placeholder="Enter URLs here..."> -->
+       <textarea name="" id="input" cols="30" rows="10"></textarea>
+        <button id="startBtn">Start Process</button>
+        <p>Developed by <span class="span">dev rf-gul</span> </p>
+    </div>
+</body>
+<script src="popup.js"></script>
+</html>

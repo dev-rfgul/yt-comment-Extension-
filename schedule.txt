@@ -1,0 +1,32 @@
+//subscribe the channel first ....
+
+    let subscribeButton = document.querySelector(
+          "#subscribe-button-shape > button"
+        );
+        subscribeButton.click();
+
+
+
+//go to videos page 
+
+
+
+   const videoPage = document.querySelector('yt-tab-shape[tab-title="Videos"]');
+    videoPage.click();
+
+
+
+
+
+//play video using a loop 
+
+   let videoSelector = document.querySelectorAll(
+      "#thumbnail > yt-image > img"
+    )[4];
+    console.log("video selector", videoSelector);
+    videoSelector.click();
+
+
+//get the title 
+//like the videos
+//comment on the videos 
