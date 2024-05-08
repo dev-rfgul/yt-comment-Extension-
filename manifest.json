@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Youtube Auto Interact",
+    "name": "Youtube Auto Interact  ",
     "version": "1.0",
     "description": "It will play the video, like it and comment on it using groq ai.",
     "permissions": [

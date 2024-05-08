@@ -29,4 +29,47 @@
 
 //get the title 
 //like the videos
-//comment on the videos 
+//comment on the videos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function
+
+
+        create 
+        like
+        comment
+        and rest of the things
+        close
+
+
+loop{1,
+
+function call()
+}
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=BuaKzm7Kq9Q
+https://www.youtube.com/watch?v=cvh0nX08nRw
+https://www.youtube.com/watch?v=qAJm4XD2mUY
+https://www.youtube.com/watch?v=D0oMGeqwbJo
+https://www.youtube.com/watch?v=MgxTazCnkSk
