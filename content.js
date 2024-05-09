@@ -5,15 +5,20 @@ chrome.runtime.onMessage.addListener(async function (message, sender, sendRespon
   }
 });
 
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.message === 'performActions') {
+    // Perform your actions here
+    startProcess();
+  }
+});
+
 async function startProcess() {
-  await createTab();
+  // await createTab();
   await likeVideo();
   await subscribeChannel();
   await commentVideo();
   await closeTab();
 }
-
-
 async function likeVideo() {
   // Wait for the DOM content to be fully loaded
 
@@ -33,7 +38,6 @@ async function likeVideo() {
     console.error("button-view-model element not found");
   }
 }
-
 async function subscribeChannel() {
   let subscribeButton = document.querySelector(
     "#subscribe-button-shape > button"
@@ -41,7 +45,6 @@ async function subscribeChannel() {
   subscribeButton.click();
   // Implementation goes here
 }
-
 async function commentVideo() {
   var placeholder = document.getElementById("placeholder-area");
   if (placeholder) {
@@ -60,14 +63,24 @@ async function commentVideo() {
     console.log("Button with ID 'submit-button' not found.");
   }
 }
-
 async function closeTab() {
   // Close the current tab
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
     chrome.tabs.remove(tabs[0].id);
   });
 }
-
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
+}
+function getURLsArray() {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get("URLsArray", function (result) {
+      if (chrome.runtime.lastError) {
+        reject(chrome.runtime.lastError);
+      } else {
+        resolve(result.URLsArray || []);
+        console.log("URLsArray is set to " + result.URLsArray);
+      }
+    });
+  });
 }
