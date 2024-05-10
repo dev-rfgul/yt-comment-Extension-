@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener( (message, sender, sendResponse) => {
   if (message.response === "start") {
     console.log("start form background.js");
 
@@ -46,10 +46,7 @@ function createTab(URLsArray) {
       }
     );
   }
-
-
 }
-
 
 function createTab(URLsArray) {
   if (URLsArray.length === 0) {
@@ -58,25 +55,23 @@ function createTab(URLsArray) {
 
   var url = URLsArray.shift();
 
-  chrome.tabs.create({ url: url, active: true }, function(tab) {
+  chrome.tabs.create({ url: url, active: true }, function (tab) {
     console.log("tab created");
-
-    chrome.tabs.onUpdated.addListener(function listener (tabId, changeInfo) {
-      if (tabId === tab.id && changeInfo.status === 'complete') {
-        // Send a message to the content script
-        chrome.tabs.sendMessage(tabId, { message: 'performActions' });
-
-        // Close the tab
-        chrome.tabs.remove(tabId, function() {
-          console.log("tab closed");
-
-          // Remove this listener
-          chrome.tabs.onUpdated.removeListener(listener);
-
-          // Open the next tab
-          createTab(URLsArray);
-        });
-      }
-    });
   });
-}
+  chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo) {
+  
+      // Send a message to the content script
+      chrome.tabs.sendMessage(tabId, { action: "performActions" });  })
+      // Close the tab
+      chrome.tabs.remove(tabId, function () {
+        console.log("tab closed");
+
+        // Remove this listener
+        chrome.tabs.onUpdated.removeListener(listener);
+      });
+        // Open the next tab
+        createTab(URLsArray);
+      
+    }
+  
+
